@@ -36,8 +36,9 @@ const tools = computed<ToolCategory[]>(() => [
   <MenuLayout class="menu-layout" :class="{ isSmallScreen: styleStore.isSmallScreen }">
     <template #sider>
       <RouterLink to="/" class="hero-wrapper">
-        <HeroGradient class="gradient" />
-        <div class="text-wrapper">
+        <!-- <HeroGradient class="gradient" /> -->
+        <img src="../assets/pic2.png" alt="" class="syxylogo">
+        <!-- <div class="text-wrapper">
           <div class="title">
             IT - TOOLS
           </div>
@@ -45,7 +46,7 @@ const tools = computed<ToolCategory[]>(() => [
           <div class="subtitle">
             {{ $t('home.subtitle') }}
           </div>
-        </div>
+        </div> -->
       </RouterLink>
 
       <div class="sider-content">
@@ -59,7 +60,7 @@ const tools = computed<ToolCategory[]>(() => [
 
         <CollapsibleToolMenu :tools-by-category="tools" />
 
-        <div class="footer">
+        <!-- <div class="footer">
           <div>
             IT-Tools
 
@@ -85,7 +86,7 @@ const tools = computed<ToolCategory[]>(() => [
               Corentin Thomasset
             </c-link>
           </div>
-        </div>
+        </div> -->
       </div>
     </template>
 
@@ -122,15 +123,15 @@ const tools = computed<ToolCategory[]>(() => [
 
         <c-tooltip position="bottom" :tooltip="$t('home.support')">
           <c-button
+            href="https://ltb1996.github.io/erweima/"
             round
-            href="https://www.buymeacoffee.com/cthmsst"
             rel="noopener"
             target="_blank"
             class="support-button"
             :bordered="false"
             @click="() => tracker.trackEvent({ eventName: 'Support button clicked' })"
           >
-            {{ $t('home.buyMeACoffee') }}
+            感谢
             <NIcon v-if="!styleStore.isSmallScreen" :component="Heart" ml-2 />
           </c-button>
         </c-tooltip>
@@ -150,6 +151,7 @@ const tools = computed<ToolCategory[]>(() => [
 //         radial-gradient(@color @percent, transparent @percent);
 //     background-position: 0 0, @position @position;
 //     background-size: @size @size;
+//     https://www.buymeacoffee.com/cthmsst
 // }
 
 .support-button {
@@ -173,17 +175,22 @@ const tools = computed<ToolCategory[]>(() => [
 }
 
 .sider-content {
-  padding-top: 160px;
-  padding-bottom: 200px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .hero-wrapper {
-  position: absolute;
-  display: block;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  overflow: hidden;
+  // position: absolute;
+  // display: block;
+  // left: 0;
+  // width: 100%;
+  // z-index: 10;
+  // overflow: hidden;
+  position: relative; /* 确保该元素为相对定位 */
+  display: flex; /* 使用 flexbox 实现居中 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  height: 100px; /* 可以设置一个合适的高度 */
 
   .gradient {
     margin-top: -65px;
@@ -213,6 +220,14 @@ const tools = computed<ToolCategory[]>(() => [
     .subtitle {
       font-size: 16px;
     }
+  }
+
+  .syxylogo {
+    display: block; /* 确保是块级元素 */
+    // margin: 0 auto; /* 水平居中 */
+    width: 180px; /* 根据需要设置宽度 */
+    height: 190px; /* 根据需要设置高度 */
+    margin-top: 90px;
   }
 }
 </style>

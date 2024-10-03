@@ -21,6 +21,13 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
       <slot name="sider" />
     </n-layout-sider>
     <n-layout class="content">
+      <div class="name">
+        <div>
+          <span class="xueyuanname">三亚学院盛宝金融科技商学院-------区块链工程</span>
+          <span class="word">-------IT-tools</span>
+        </div>
+        <img src="../assets/logo1.png" alt="" class="logo">
+      </div>
       <slot name="content" />
       <div v-show="isSmallScreen && !isMenuCollapsed" class="overlay" @click="isMenuCollapsed = true" />
     </n-layout>
@@ -42,6 +49,27 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
   // background-color: #f1f5f9;
   ::v-deep(.n-layout-scroll-container) {
     padding: 26px;
+  }
+  .name {
+    // width: 1500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    .xueyuanname {
+      font-size: 24px;
+      color:dimgrey;
+      font-weight: bold;
+      // margin-right: 30px;
+    }
+    .word {
+      font-size: 24px;
+      color:dimgrey;
+      font-weight: bold;
+    }
+    .logo {
+      width: 300px;
+    }
   }
 }
 

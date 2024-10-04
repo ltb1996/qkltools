@@ -10,6 +10,7 @@ const toolStore = useToolStore();
 
 useHead({ title: 'IT Tools - Handy online tools for developers' });
 const { t } = useI18n();
+console.log('New tools+:', toolStore.newTools);
 </script>
 
 <template>

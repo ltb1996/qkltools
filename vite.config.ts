@@ -18,7 +18,7 @@ import { configDefaults } from 'vitest/config';
 
 // const baseUrl = process.env.BASE_URL ?? '/';
 // const baseUrl = '/qklittools/';
-const baseUrl = process.env.NODE_ENV === 'production' ? '/qklittools/' : '/';
+const baseUrl = process.env.NODE_ENV === 'production' ? './' : '/';
 
 // https://vitejs.dev/config/
 export default defineConfig({
